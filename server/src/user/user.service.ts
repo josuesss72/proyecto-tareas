@@ -17,6 +17,13 @@ export class UserService {
     try {
       const user = await this.prismaService.user.findUnique({
         where: { id },
+        select: {
+          id: true,
+          email: true,
+          name: true,
+          createdAt: true,
+          updatedAt: true,
+        },
       });
 
       return {
@@ -40,6 +47,9 @@ export class UserService {
       const user = await this.prismaService.user.update({
         where: { id },
         data: dto,
+        select: {
+          id: true,
+        },
       });
 
       return {
