@@ -144,11 +144,7 @@ Necesita autenticación JWT para acceder a los endpoints de usuarios.
 		"ok": true
 	},
 	"user": {
-		"id": "string",
-		"email": "string",
-		"name": "string",
-		"createdAt": "datetime",
-		"updatedAt": "datetime"
+		"id": "string"
 	}
 }
 ```
