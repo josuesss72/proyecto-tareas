@@ -116,7 +116,42 @@ server/
 Necesita autenticación JWT para acceder a los endpoints de usuarios.
 
 - `GET /users/me` - Obtener perfil del usuario actual
+
+```json
+{
+	"status": {
+		"code": 200,
+		"message": "Usuario obtenido exitosamente",
+		"ok": true
+	},
+	"user": {
+		"id": "string",
+		"email": "string",
+		"name": "string",
+		"createdAt": "datetime",
+		"updatedAt": "datetime"
+	}
+}
+```
+
 - `PATCH /users/me` - Actualizar perfil del usuario actual
+
+```json
+{
+	"status": {
+		"code": 200,
+		"message": "Usuario actualizado exitosamente",
+		"ok": true
+	},
+	"user": {
+		"id": "string",
+		"email": "string",
+		"name": "string",
+		"createdAt": "datetime",
+		"updatedAt": "datetime"
+	}
+}
+```
 
 ### Tareas
 
