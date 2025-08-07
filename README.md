@@ -33,7 +33,7 @@ Este es un sistema de gestión de tareas desarrollado con NestJS, Prisma y una b
 1. Clona el repositorio:
 
    ```bash
-   git clone [URL_DEL_REPOSITORIO]
+   git clone https://github.com/josuesss72/proyecto-tareas.git
    cd proyecto-tareas
    ```
 
@@ -83,7 +83,33 @@ server/
 ### Autenticación
 
 - `POST /auth/register` - Registrar un nuevo usuario
+
+```json
+{
+	"status": {
+		"code": 201,
+		"message": "Usuario registrado exitosamente",
+		"ok": true
+	},
+	"user": {
+		"id": "string",
+		"email": "string"
+	}
+}
+```
+
 - `POST /auth/login` - Iniciar sesión y obtener token JWT
+
+```json
+{
+	"status": {
+		"code": 200,
+		"message": "Login exitoso",
+		"ok": true
+	},
+	"token": "string"
+}
+```
 
 ### Usuarios
 
