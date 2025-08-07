@@ -1,23 +1,22 @@
-import { Controller, Get, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Body, Patch, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { AuthGuard } from 'src/auth/guards/auth.guard';
+import { UserSession } from 'src/common/entities/user.entity';
+import { GetUserReq } from 'src/common/decorators/get-user-req';
 
+@UseGuards(AuthGuard)
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(id);
+  @Get('me/')
+  findOne(@GetUserReq() user: UserSession) {
+    return this.userService.findOne(user.sub);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: UpdateUserDto) {
-    return this.userService.update(id, dto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.remove(id);
+  @Patch('me/')
+  update(@GetUserReq() user: UserSession, @Body() dto: UpdateUserDto) {
+    return this.userService.update(user.sub, dto);
   }
 }
