@@ -167,7 +167,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 			"id": "string",
 			"title": "string",
 			"description": "string",
-			"state": "string",
+			"status": "string",
 			"createdAt": "datetime",
 			"updatedAt": "datetime"
 		}
@@ -188,7 +188,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 		"id": "string",
 		"title": "string",
 		"description": "string",
-		"state": "string",
+		"status": "string",
 		"createdAt": "datetime",
 		"updatedAt": "datetime"
 	}
@@ -208,7 +208,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 		"id": "string",
 		"title": "string",
 		"description": "string",
-		"state": "string",
+		"status": "string",
 		"createdAt": "datetime",
 		"updatedAt": "datetime"
 	}
@@ -228,7 +228,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 		"id": "string",
 		"title": "string",
 		"description": "string",
-		"state": "string",
+		"status": "string",
 		"createdAt": "datetime",
 		"updatedAt": "datetime"
 	}
