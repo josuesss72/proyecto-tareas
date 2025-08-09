@@ -235,7 +235,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 }
 ```
 
-- `DELETE /tasks/:id` - Eliminar una tarea
+- `DELETE /tasks/delete/:id` - Eliminar una tarea
 
 ```json
 {
@@ -247,7 +247,19 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 }
 ```
 
-- `DELETE /tasks` - Eliminar todas las tareas del usuario
+- `DELETE /tasks/delete-all` - Eliminar todas las tareas del usuario
+
+```json
+{
+	"status": {
+		"code": 200,
+		"message": "Tareas eliminadas exitosamente",
+		"ok": true
+	}
+}
+```
+
+- `DELETE /tasks/delete-selected` - Eliminar tareas seleccionadas
 
 ```json
 {
