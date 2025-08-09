@@ -115,7 +115,7 @@ server/
 
 Necesita autenticación JWT para acceder a los endpoints de usuarios.
 
-- `GET /users/me` - Obtener perfil del usuario actual
+- `GET /user/me` - Obtener perfil del usuario actual
 
 ```json
 {
@@ -134,7 +134,7 @@ Necesita autenticación JWT para acceder a los endpoints de usuarios.
 }
 ```
 
-- `PATCH /users/me` - Actualizar perfil del usuario actual
+- `PATCH /user/me` - Actualizar perfil del usuario actual
 
 ```json
 {
@@ -153,7 +153,7 @@ Necesita autenticación JWT para acceder a los endpoints de usuarios.
 
 Necesita autenticación JWT para acceder a los endpoints de tareas.
 
-- `GET /tasks` - Obtener todas las tareas del usuario
+- `GET /task` - Obtener todas las tareas del usuario
 
 ```json
 {
@@ -175,7 +175,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 }
 ```
 
-- `POST /tasks` - Crear una nueva tarea
+- `POST /task` - Crear una nueva tarea
 
 ```json
 {
@@ -195,7 +195,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 }
 ```
 
-- `GET /tasks/:id` - Obtener una tarea por ID
+- `GET /task/:id` - Obtener una tarea por ID
 
 ```json
 {
@@ -215,7 +215,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 }
 ```
 
-- `PATCH /tasks/:id` - Actualizar una tarea
+- `PATCH /task/:id` - Actualizar una tarea
 
 ```json
 {
@@ -235,7 +235,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 }
 ```
 
-- `DELETE /tasks/delete/:id` - Eliminar una tarea
+- `DELETE /task/delete/:id` - Eliminar una tarea
 
 ```json
 {
@@ -247,7 +247,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 }
 ```
 
-- `DELETE /tasks/delete-all` - Eliminar todas las tareas del usuario
+- `DELETE /task/delete-all` - Eliminar todas las tareas del usuario
 
 ```json
 {
@@ -259,7 +259,7 @@ Necesita autenticación JWT para acceder a los endpoints de tareas.
 }
 ```
 
-- `DELETE /tasks/delete-selected` - Eliminar tareas seleccionadas
+- `DELETE /task/delete-selected` - Eliminar tareas seleccionadas
 
 ```json
 {
