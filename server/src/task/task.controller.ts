@@ -49,12 +49,17 @@ export class TaskController {
     return await this.taskService.update(task.id, updateTaskDto);
   }
 
-  @Delete(':id')
+  @Delete('delete/:id')
   async remove(@Param('id', CheckExistTaskPipe, CheckOwnerPipe) task: Task) {
     return await this.taskService.remove(task.id);
   }
 
-  @Delete()
+  @Delete('delete-selected')
+  async deleteSelected(@Body() body: { ids: string[] }) {
+    return await this.taskService.deleteSelected(body.ids);
+  }
+
+  @Delete('delete-all')
   async removeAll(@GetUserReq() user: UserSession) {
     return await this.taskService.removeAll(user.sub);
   }

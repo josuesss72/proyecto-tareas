@@ -4,15 +4,11 @@ import { UpdateTaskDto } from './dto/update-task.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { UserSession } from 'src/common/entities/user.entity';
 import { statusResponse } from 'src/common/code-https';
-import { CommonService } from 'src/common/common.service';
 import { Task } from '@prisma/client';
 
 @Injectable()
 export class TaskService {
-  constructor(
-    private readonly prismaService: PrismaService,
-    private readonly commonService: CommonService,
-  ) {}
+  constructor(private readonly prismaService: PrismaService) {}
   async create(dto: CreateTaskDto, user: UserSession) {
     try {
       const task = await this.prismaService.task.create({
@@ -67,6 +63,24 @@ export class TaskService {
       return {
         status: statusResponse.http200('Tarea actualizada exitosamente'),
         task,
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async deleteSelected(ids: string[]) {
+    try {
+      await this.prismaService.task.deleteMany({
+        where: {
+          id: {
+            in: ids,
+          },
+        },
+      });
+
+      return {
+        status: statusResponse.http200('Tareas eliminadas exitosamente'),
       };
     } catch (error) {
       throw error;
